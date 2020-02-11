@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mac本连接pptp协议VPN问题</title>
+    <url>/2020/02/11/Mac%E6%9C%AC%E8%BF%9E%E6%8E%A5pptp%E5%8D%8F%E8%AE%AEVPN%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Mac连接pptp协议VPN解决办法"><a href="#Mac连接pptp协议VPN解决办法" class="headerlink" title="Mac连接pptp协议VPN解决办法"></a>Mac连接pptp协议VPN解决办法</h1><p>系统偏好设置 -&gt; 网络 -&gt; “+” 。<br>接⼝选择”VPN”，VPN类型选择”IPSec上的L2TP”，填写服务名称（任意）。<br>对刚创建的VPN进⾏配置，根据实际vpn地址填写服务地址、账户名称。<br>鉴定设置… -&gt; 用户鉴定中，勾选密码，填写vpn密码，保存关闭。<br>创建文件/etc/ppp/options,并进⾏编辑，vim /etc/ppp/options输入如下内容并保存：<br>plugin L2TP.ppp<br>l2tpnoipsec<br>此时连接VPN即可正常访问。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>Mac</category>
+      </categories>
+      <tags>
+        <tag>pptp</tag>
+        <tag>VPN</tag>
+        <tag>MAC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac运行提示已损坏解决办法</title>
     <url>/2020/02/10/Mac%E8%BF%90%E8%A1%8C%E6%8F%90%E7%A4%BA%E5%B7%B2%E6%8D%9F%E5%9D%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>1.开启安全隐私中的任何来源</p>
@@ -566,8 +581,8 @@
 ]]></content>
       <categories>
         <category>学习</category>
-        <category>参考文件</category>
         <category>博客</category>
+        <category>参考文件</category>
       </categories>
       <tags>
         <tag>Hexo</tag>

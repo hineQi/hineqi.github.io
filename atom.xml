@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-10T15:19:11.278Z</updated>
+  <updated>2020-02-11T08:00:47.194Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac本连接pptp协议VPN问题</title>
+    <link href="http://yoursite.com/2020/02/11/Mac%E6%9C%AC%E8%BF%9E%E6%8E%A5pptp%E5%8D%8F%E8%AE%AEVPN%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/02/11/Mac%E6%9C%AC%E8%BF%9E%E6%8E%A5pptp%E5%8D%8F%E8%AE%AEVPN%E9%97%AE%E9%A2%98/</id>
+    <published>2020-02-11T08:00:47.000Z</published>
+    <updated>2020-02-11T08:00:47.194Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Mac连接pptp协议VPN解决办法"><a href="#Mac连接pptp协议VPN解决办法" class="headerlink" title="Mac连接pptp协议VPN解决办法"></a>Mac连接pptp协议VPN解决办法</h1><p>系统偏好设置 -&gt; 网络 -&gt; “+” 。<br>接⼝选择”VPN”，VPN类型选择”IPSec上的L2TP”，填写服务名称（任意）。<br>对刚创建的VPN进⾏配置，根据实际vpn地址填写服务地址、账户名称。<br>鉴定设置… -&gt; 用户鉴定中，勾选密码，填写vpn密码，保存关闭。<br>创建文件/etc/ppp/options,并进⾏编辑，vim /etc/ppp/options输入如下内容并保存：<br>plugin L2TP.ppp<br>l2tpnoipsec<br>此时连接VPN即可正常访问。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Mac" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/Mac/"/>
+    
+    
+      <category term="pptp" scheme="http://yoursite.com/tags/pptp/"/>
+    
+      <category term="VPN" scheme="http://yoursite.com/tags/VPN/"/>
+    
+      <category term="MAC" scheme="http://yoursite.com/tags/MAC/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac运行提示已损坏解决办法</title>
@@ -252,9 +284,9 @@
     
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="参考文件" scheme="http://yoursite.com/categories/%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6/"/>
-    
       <category term="博客" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="参考文件" scheme="http://yoursite.com/categories/%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6/"/>
     
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>

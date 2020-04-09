@@ -388,7 +388,7 @@
               
               <div class="site-state-item site-state-posts">
                 <a href="/archives/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -410,7 +410,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -502,7 +502,7 @@
     
       <span class="post-meta-item-text">网站总字数&#58;</span>
     
-    <span title="网站总字数">10.3k</span>
+    <span title="网站总字数">10.5k</span>
   
 </div>
 
@@ -1188,4 +1188,46 @@ console.log("\n %c 作者 %c 齐海阳 \n","color: #fadfa3; background: #030307;
   -->
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/clicklove.js"></script>
-="/js/src/clicklove.js"></script>
+            }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+  <!-- 动态背景 -->
+  <!--
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  -->
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>

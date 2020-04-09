@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Hine个人博客">
 <meta property="og:description" content="Docker的一些基本命令总结">
 <meta property="article:published_time" content="2020-03-23T15:39:52.000Z">
-<meta property="article:modified_time" content="2020-03-23T15:43:32.630Z">
+<meta property="article:modified_time" content="2020-03-31T03:03:49.216Z">
 <meta property="article:author" content="Hine">
 <meta property="article:tag" content="Docker基础">
 <meta name="twitter:card" content="summary">
@@ -427,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  823 字
+                  860 字
                 </span>
               
 
@@ -479,7 +479,7 @@
 <blockquote>
 <p>查看容器内部标准日志输出</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f d6403a52907a[容器ID]</span><br><span class="line"></span><br><span class="line">-f: 让 docker logs 像使用 tail -f 一样来一直实时输出容器内部的标准输出。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f d6403a52907a[容器ID]</span><br><span class="line">docker logs -f --since&#x3D;&quot;2020-03-26T09:46:31&quot; --tail&#x3D;10 4eac9eda8950[容器ID]</span><br><span class="line"></span><br><span class="line">-f: 让 docker logs 像使用 tail -f 一样来一直实时输出容器内部的标准输出。</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>查看容器内部运行的进程</p>
 </blockquote>
@@ -544,7 +544,7 @@
 <blockquote>
 <p>基于Dockerfile创建新镜像</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker build -t hine&#x2F;centos:6.7 .</span><br><span class="line"></span><br><span class="line">-t:指定创建的目标镜像名</span><br><span class="line">.:Dockerfile文件所在目录，可指定Dockerfile绝对路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker build -t hine&#x2F;centos:6.7 .</span><br><span class="line"></span><br><span class="line">-t:指定创建的目标镜像名</span><br><span class="line">.:Dockerfile文件所在目录，可指定Dockerfile绝对路径，会将此目录打包上传给docker</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>为指定镜像添加标签</p>
 </blockquote>
@@ -566,6 +566,10 @@
 <p>容器加入网络</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name test1 --network test-net ubuntu &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -595,7 +599,7 @@
   <p><span>本文标题:</span><a href="/2020/03/23/Docker%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">Docker基础使用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Hine 的个人博客">Hine</a></p>
   <p><span>发布时间:</span>2020年03月23日 - 23:03</p>
-  <p><span>最后更新:</span>2020年03月23日 - 23:03</p>
+  <p><span>最后更新:</span>2020年03月31日 - 11:03</p>
   <p><span>原始链接:</span><a href="/2020/03/23/Docker%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" title="Docker基础使用">http://yoursite.com/2020/03/23/Docker%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2020/03/23/Docker%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"  aria-label="复制成功！"></i></span>
   </p>
@@ -651,6 +655,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/09/IDEA%E4%BD%BF%E7%94%A8%E9%9A%8F%E7%AC%94/" rel="prev" title="IDEA使用随笔">
+                IDEA使用随笔 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -772,7 +780,7 @@
               
               <div class="site-state-item site-state-posts">
                 <a href="/archives/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -783,7 +791,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -794,7 +802,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -868,7 +876,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器使用"><span class="nav-number">1.</span> <span class="nav-text">Docker容器使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker镜像使用"><span class="nav-number">2.</span> <span class="nav-text">Docker镜像使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器互联"><span class="nav-number">3.</span> <span class="nav-text">Docker容器互联</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器使用"><span class="nav-number">1.</span> <span class="nav-text">Docker容器使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker镜像使用"><span class="nav-number">2.</span> <span class="nav-text">Docker镜像使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker容器互联"><span class="nav-number">3.</span> <span class="nav-text">Docker容器互联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-Compose"><span class="nav-number">4.</span> <span class="nav-text">Docker Compose</span></a></li></ol></div>
             
 
           </div>
@@ -902,7 +910,7 @@
     
       <span class="post-meta-item-text">网站总字数&#58;</span>
     
-    <span title="网站总字数">10.2k</span>
+    <span title="网站总字数">10.3k</span>
   
 </div>
 

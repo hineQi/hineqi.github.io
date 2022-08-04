@@ -1,565 +1,912 @@
 mixed-port: 7890
 allow-lan: true
-bind-address: '*'
+bind-address: "*"
 mode: rule
 log-level: info
-external-controller: '127.0.0.1:9090'
-dns:
-    enable: true
-    ipv6: false
-    default-nameserver: [223.5.5.5, 119.29.29.29]
-    enhanced-mode: redir-host
-    fake-ip-range: 198.18.0.1/16
-    use-hosts: true
-    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['tls://1.0.0.1:853', 'https://cloudflare-dns.com/dns-query', 'https://dns.google/dns-query']
-    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+external-controller: 127.0.0.1:9090
 proxies:
-    - { name: 'Trojan|香港YouTube梦歌01|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20000, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|香港YouTube梦歌02|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20000, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|香港YouTube梦歌03|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20000, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|香港YouTube梦歌04|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20000, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|香港YouTube梦歌05|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20000, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|台湾YouTube梦歌01|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20003, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|台湾YouTube梦歌02|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20003, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|台湾YouTube梦歌03|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20003, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|台湾YouTube梦歌04|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20003, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|台湾YouTube梦歌05|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20003, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌01|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20004, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌02|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20004, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌03|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20004, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌04|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20004, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌05|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20004, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|马来西亚YouTube梦歌01|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20005, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|马来西亚YouTube梦歌02|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20005, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|马来西亚YouTube梦歌03|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20005, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|马来西亚YouTube梦歌04|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20005, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|马来西亚YouTube梦歌05|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20005, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|英国YouTube梦歌01|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20006, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|英国YouTube梦歌02|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20006, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|英国YouTube梦歌03|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20006, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|英国YouTube梦歌04|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20006, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|英国YouTube梦歌05|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20006, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌06|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20009, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌07|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20009, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌08|Netflix]', type: trojan, server: cm-gz.okvpn.xyz, port: 20009, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌09|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20009, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
-    - { name: 'Trojan|美国YouTube梦歌10|Netflix]', type: trojan, server: cu-cs.okvpn.xyz, port: 20009, password: 57896d33-5121-4caa-9d68-98812dd450cd, udp: true, skip-cert-verify: true }
+  - {name: YouTube梦歌_1, server: h961359.strongpipe.live, port: 11543, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_2, server: h961359.strongpipe.live, port: 11444, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_3, server: h961359.strongpipe.live, port: 11443, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_4, server: h961359.strongpipe.live, port: 11544, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_5, server: h961359.strongpipe.live, port: 11243, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_6, server: h961359.strongpipe.live, port: 11744, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_7, server: h961359.strongpipe.live, port: 11244, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_8, server: h961359.strongpipe.live, port: 11743, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_9, server: h63956.strongpipe.live, port: 11545, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_10, server: h961359.strongpipe.live, port: 11545, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_11, server: h63956.strongpipe.live, port: 11345, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_12, server: h63956.strongpipe.live, port: 11445, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_13, server: h961359.strongpipe.live, port: 11445, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_14, server: h961359.strongpipe.live, port: 11245, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_15, server: h217022.strongpipe.live, port: 11745, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_16, server: h961359.strongpipe.live, port: 11745, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_17, server: h181902.strongpipe.live, port: 11145, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_18, server: h3816tw.strongpipe.live, port: 20443, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_19, server: h961684.strongpipe.live, port: 11745, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
+  - {name: YouTube梦歌_20, server: h63956.strongpipe.live, port: 11245, type: http, username: dcf12c7e7d, password: 26bae9b023, tls: true}
 proxy-groups:
-    - { name: Netflix, type: select, proxies: [自动选择, 故障转移, 'Trojan|香港YouTube梦歌01|Netflix]', 'Trojan|香港YouTube梦歌02|Netflix]', 'Trojan|香港YouTube梦歌03|Netflix]', 'Trojan|香港YouTube梦歌04|Netflix]', 'Trojan|香港YouTube梦歌05|Netflix]', 'Trojan|台湾YouTube梦歌01|Netflix]', 'Trojan|台湾YouTube梦歌02|Netflix]', 'Trojan|台湾YouTube梦歌03|Netflix]', 'Trojan|台湾YouTube梦歌04|Netflix]', 'Trojan|台湾YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌01|Netflix]', 'Trojan|美国YouTube梦歌02|Netflix]', 'Trojan|美国YouTube梦歌03|Netflix]', 'Trojan|美国YouTube梦歌04|Netflix]', 'Trojan|美国YouTube梦歌05|Netflix]', 'Trojan|马来西亚YouTube梦歌01|Netflix]', 'Trojan|马来西亚YouTube梦歌02|Netflix]', 'Trojan|马来西亚YouTube梦歌03|Netflix]', 'Trojan|马来西亚YouTube梦歌04|Netflix]', 'Trojan|马来西亚YouTube梦歌05|Netflix]', 'Trojan|英国YouTube梦歌01|Netflix]', 'Trojan|英国YouTube梦歌02|Netflix]', 'Trojan|英国YouTube梦歌03|Netflix]', 'Trojan|英国YouTube梦歌04|Netflix]', 'Trojan|英国YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌06|Netflix]', 'Trojan|美国YouTube梦歌07|Netflix]', 'Trojan|美国YouTube梦歌08|Netflix]', 'Trojan|美国YouTube梦歌09|Netflix]', 'Trojan|美国YouTube梦歌10|Netflix]'] }
-    - { name: 自动选择, type: url-test, proxies: ['Trojan|香港YouTube梦歌01|Netflix]', 'Trojan|香港YouTube梦歌02|Netflix]', 'Trojan|香港YouTube梦歌03|Netflix]', 'Trojan|香港YouTube梦歌04|Netflix]', 'Trojan|香港YouTube梦歌05|Netflix]', 'Trojan|台湾YouTube梦歌01|Netflix]', 'Trojan|台湾YouTube梦歌02|Netflix]', 'Trojan|台湾YouTube梦歌03|Netflix]', 'Trojan|台湾YouTube梦歌04|Netflix]', 'Trojan|台湾YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌01|Netflix]', 'Trojan|美国YouTube梦歌02|Netflix]', 'Trojan|美国YouTube梦歌03|Netflix]', 'Trojan|美国YouTube梦歌04|Netflix]', 'Trojan|美国YouTube梦歌05|Netflix]', 'Trojan|马来西亚YouTube梦歌01|Netflix]', 'Trojan|马来西亚YouTube梦歌02|Netflix]', 'Trojan|马来西亚YouTube梦歌03|Netflix]', 'Trojan|马来西亚YouTube梦歌04|Netflix]', 'Trojan|马来西亚YouTube梦歌05|Netflix]', 'Trojan|英国YouTube梦歌01|Netflix]', 'Trojan|英国YouTube梦歌02|Netflix]', 'Trojan|英国YouTube梦歌03|Netflix]', 'Trojan|英国YouTube梦歌04|Netflix]', 'Trojan|英国YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌06|Netflix]', 'Trojan|美国YouTube梦歌07|Netflix]', 'Trojan|美国YouTube梦歌08|Netflix]', 'Trojan|美国YouTube梦歌09|Netflix]', 'Trojan|美国YouTube梦歌10|Netflix]'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['Trojan|香港YouTube梦歌01|Netflix]', 'Trojan|香港YouTube梦歌02|Netflix]', 'Trojan|香港YouTube梦歌03|Netflix]', 'Trojan|香港YouTube梦歌04|Netflix]', 'Trojan|香港YouTube梦歌05|Netflix]', 'Trojan|台湾YouTube梦歌01|Netflix]', 'Trojan|台湾YouTube梦歌02|Netflix]', 'Trojan|台湾YouTube梦歌03|Netflix]', 'Trojan|台湾YouTube梦歌04|Netflix]', 'Trojan|台湾YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌01|Netflix]', 'Trojan|美国YouTube梦歌02|Netflix]', 'Trojan|美国YouTube梦歌03|Netflix]', 'Trojan|美国YouTube梦歌04|Netflix]', 'Trojan|美国YouTube梦歌05|Netflix]', 'Trojan|马来西亚YouTube梦歌01|Netflix]', 'Trojan|马来西亚YouTube梦歌02|Netflix]', 'Trojan|马来西亚YouTube梦歌03|Netflix]', 'Trojan|马来西亚YouTube梦歌04|Netflix]', 'Trojan|马来西亚YouTube梦歌05|Netflix]', 'Trojan|英国YouTube梦歌01|Netflix]', 'Trojan|英国YouTube梦歌02|Netflix]', 'Trojan|英国YouTube梦歌03|Netflix]', 'Trojan|英国YouTube梦歌04|Netflix]', 'Trojan|英国YouTube梦歌05|Netflix]', 'Trojan|美国YouTube梦歌06|Netflix]', 'Trojan|美国YouTube梦歌07|Netflix]', 'Trojan|美国YouTube梦歌08|Netflix]', 'Trojan|美国YouTube梦歌09|Netflix]', 'Trojan|美国YouTube梦歌10|Netflix]'], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+  - name: ❤️ YouTube梦歌
+    type: select
+    proxies:
+      - 🎈 Failover
+      - 💡 Auto
+      - YouTube梦歌_1
+      - YouTube梦歌_2
+      - YouTube梦歌_3
+      - YouTube梦歌_4
+      - YouTube梦歌_5
+      - YouTube梦歌_6
+      - YouTube梦歌_7
+      - YouTube梦歌_8
+      - YouTube梦歌_9
+      - YouTube梦歌_10
+      - YouTube梦歌_11
+      - YouTube梦歌_12
+      - YouTube梦歌_13
+      - YouTube梦歌_14
+      - YouTube梦歌_15
+      - YouTube梦歌_16
+      - YouTube梦歌_17
+      - YouTube梦歌_18
+      - YouTube梦歌_19
+      - YouTube梦歌_20
+  - name: ☁️ Domestic
+    type: select
+    proxies:
+      - DIRECT
+      - ❤️ YouTube梦歌
+  - name: 🛡 Shield
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 💡 Auto
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - YouTube梦歌_1
+      - YouTube梦歌_2
+      - YouTube梦歌_3
+      - YouTube梦歌_4
+      - YouTube梦歌_5
+      - YouTube梦歌_6
+      - YouTube梦歌_7
+      - YouTube梦歌_8
+      - YouTube梦歌_9
+      - YouTube梦歌_10
+      - YouTube梦歌_11
+      - YouTube梦歌_12
+      - YouTube梦歌_13
+      - YouTube梦歌_14
+      - YouTube梦歌_15
+      - YouTube梦歌_16
+      - YouTube梦歌_17
+      - YouTube梦歌_18
+      - YouTube梦歌_19
+      - YouTube梦歌_20
+  - name: 🎈 Failover
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - YouTube梦歌_1
+      - YouTube梦歌_2
+      - YouTube梦歌_3
+      - YouTube梦歌_4
+      - YouTube梦歌_5
+      - YouTube梦歌_6
+      - YouTube梦歌_7
+      - YouTube梦歌_8
+      - YouTube梦歌_9
+      - YouTube梦歌_10
+      - YouTube梦歌_11
+      - YouTube梦歌_12
+      - YouTube梦歌_13
+      - YouTube梦歌_14
+      - YouTube梦歌_15
+      - YouTube梦歌_16
+      - YouTube梦歌_17
+      - YouTube梦歌_18
+      - YouTube梦歌_19
+      - YouTube梦歌_20
 rules:
-    - 'DOMAIN,www.rerongtuliao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,services.googleapis.cn,Netflix'
-    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Netflix'
-    - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
-    - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
-    - 'DOMAIN,developer.apple.com,Netflix'
-    - 'DOMAIN-SUFFIX,digicert.com,Netflix'
-    - 'DOMAIN,ocsp.apple.com,Netflix'
-    - 'DOMAIN,ocsp.comodoca.com,Netflix'
-    - 'DOMAIN,ocsp.usertrust.com,Netflix'
-    - 'DOMAIN,ocsp.sectigo.com,Netflix'
-    - 'DOMAIN,ocsp.verisign.net,Netflix'
-    - 'DOMAIN-SUFFIX,apple-dns.net,Netflix'
-    - 'DOMAIN,testflight.apple.com,Netflix'
-    - 'DOMAIN,sandbox.itunes.apple.com,Netflix'
-    - 'DOMAIN,itunes.apple.com,Netflix'
-    - 'DOMAIN-SUFFIX,apps.apple.com,Netflix'
-    - 'DOMAIN-SUFFIX,blobstore.apple.com,Netflix'
-    - 'DOMAIN,cvws.icloud-content.com,Netflix'
-    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
-    - 'DOMAIN-SUFFIX,me.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
-    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
-    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cn,DIRECT'
-    - 'DOMAIN-KEYWORD,-cn,DIRECT'
-    - 'DOMAIN-SUFFIX,126.com,DIRECT'
-    - 'DOMAIN-SUFFIX,126.net,DIRECT'
-    - 'DOMAIN-SUFFIX,127.net,DIRECT'
-    - 'DOMAIN-SUFFIX,163.com,DIRECT'
-    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
-    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
-    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
-    - 'DOMAIN-KEYWORD,alipay,DIRECT'
-    - 'DOMAIN-KEYWORD,taobao,DIRECT'
-    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
-    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
-    - 'DOMAIN-KEYWORD,baidu,DIRECT'
-    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
-    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
-    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
-    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
-    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
-    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
-    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
-    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
-    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
-    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
-    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
-    - 'DOMAIN-SUFFIX,le.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,licdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoft.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoftonline.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
-    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
-    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
-    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
-    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
-    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
-    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
-    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
-    - 'DOMAIN-KEYWORD,amazon,Netflix'
-    - 'DOMAIN-KEYWORD,google,Netflix'
-    - 'DOMAIN-KEYWORD,gmail,Netflix'
-    - 'DOMAIN-KEYWORD,youtube,Netflix'
-    - 'DOMAIN-KEYWORD,facebook,Netflix'
-    - 'DOMAIN-SUFFIX,fb.me,Netflix'
-    - 'DOMAIN-SUFFIX,fbcdn.net,Netflix'
-    - 'DOMAIN-KEYWORD,twitter,Netflix'
-    - 'DOMAIN-KEYWORD,instagram,Netflix'
-    - 'DOMAIN-KEYWORD,dropbox,Netflix'
-    - 'DOMAIN-SUFFIX,twimg.com,Netflix'
-    - 'DOMAIN-KEYWORD,blogspot,Netflix'
-    - 'DOMAIN-SUFFIX,youtu.be,Netflix'
-    - 'DOMAIN-KEYWORD,whatsapp,Netflix'
-    - 'DOMAIN-KEYWORD,admarvel,REJECT'
-    - 'DOMAIN-KEYWORD,admaster,REJECT'
-    - 'DOMAIN-KEYWORD,adsage,REJECT'
-    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
-    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
-    - 'DOMAIN-KEYWORD,adwords,REJECT'
-    - 'DOMAIN-KEYWORD,adservice,REJECT'
-    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
-    - 'DOMAIN-KEYWORD,domob,REJECT'
-    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
-    - 'DOMAIN-KEYWORD,duomeng,REJECT'
-    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
-    - 'DOMAIN-KEYWORD,guanggao,REJECT'
-    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
-    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
-    - 'DOMAIN-KEYWORD,mopub,REJECT'
-    - 'DOMAIN-KEYWORD,omgmta,REJECT'
-    - 'DOMAIN-KEYWORD,openx,REJECT'
-    - 'DOMAIN-KEYWORD,partnerad,REJECT'
-    - 'DOMAIN-KEYWORD,pingfore,REJECT'
-    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
-    - 'DOMAIN-KEYWORD,uedas,REJECT'
-    - 'DOMAIN-KEYWORD,umeng,REJECT'
-    - 'DOMAIN-KEYWORD,usage,REJECT'
-    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
-    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
-    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
-    - 'DOMAIN-SUFFIX,9to5mac.com,Netflix'
-    - 'DOMAIN-SUFFIX,abpchina.org,Netflix'
-    - 'DOMAIN-SUFFIX,adblockplus.org,Netflix'
-    - 'DOMAIN-SUFFIX,adobe.com,Netflix'
-    - 'DOMAIN-SUFFIX,akamaized.net,Netflix'
-    - 'DOMAIN-SUFFIX,alfredapp.com,Netflix'
-    - 'DOMAIN-SUFFIX,amplitude.com,Netflix'
-    - 'DOMAIN-SUFFIX,ampproject.org,Netflix'
-    - 'DOMAIN-SUFFIX,android.com,Netflix'
-    - 'DOMAIN-SUFFIX,angularjs.org,Netflix'
-    - 'DOMAIN-SUFFIX,aolcdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,apkpure.com,Netflix'
-    - 'DOMAIN-SUFFIX,appledaily.com,Netflix'
-    - 'DOMAIN-SUFFIX,appshopper.com,Netflix'
-    - 'DOMAIN-SUFFIX,appspot.com,Netflix'
-    - 'DOMAIN-SUFFIX,arcgis.com,Netflix'
-    - 'DOMAIN-SUFFIX,archive.org,Netflix'
-    - 'DOMAIN-SUFFIX,armorgames.com,Netflix'
-    - 'DOMAIN-SUFFIX,aspnetcdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,att.com,Netflix'
-    - 'DOMAIN-SUFFIX,awsstatic.com,Netflix'
-    - 'DOMAIN-SUFFIX,azureedge.net,Netflix'
-    - 'DOMAIN-SUFFIX,azurewebsites.net,Netflix'
-    - 'DOMAIN-SUFFIX,bing.com,Netflix'
-    - 'DOMAIN-SUFFIX,bintray.com,Netflix'
-    - 'DOMAIN-SUFFIX,bit.com,Netflix'
-    - 'DOMAIN-SUFFIX,bit.ly,Netflix'
-    - 'DOMAIN-SUFFIX,bitbucket.org,Netflix'
-    - 'DOMAIN-SUFFIX,bjango.com,Netflix'
-    - 'DOMAIN-SUFFIX,bkrtx.com,Netflix'
-    - 'DOMAIN-SUFFIX,blog.com,Netflix'
-    - 'DOMAIN-SUFFIX,blogcdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,blogger.com,Netflix'
-    - 'DOMAIN-SUFFIX,blogsmithmedia.com,Netflix'
-    - 'DOMAIN-SUFFIX,blogspot.com,Netflix'
-    - 'DOMAIN-SUFFIX,blogspot.hk,Netflix'
-    - 'DOMAIN-SUFFIX,bloomberg.com,Netflix'
-    - 'DOMAIN-SUFFIX,box.com,Netflix'
-    - 'DOMAIN-SUFFIX,box.net,Netflix'
-    - 'DOMAIN-SUFFIX,cachefly.net,Netflix'
-    - 'DOMAIN-SUFFIX,chromium.org,Netflix'
-    - 'DOMAIN-SUFFIX,cl.ly,Netflix'
-    - 'DOMAIN-SUFFIX,cloudflare.com,Netflix'
-    - 'DOMAIN-SUFFIX,cloudfront.net,Netflix'
-    - 'DOMAIN-SUFFIX,cloudmagic.com,Netflix'
-    - 'DOMAIN-SUFFIX,cmail19.com,Netflix'
-    - 'DOMAIN-SUFFIX,cnet.com,Netflix'
-    - 'DOMAIN-SUFFIX,cocoapods.org,Netflix'
-    - 'DOMAIN-SUFFIX,comodoca.com,Netflix'
-    - 'DOMAIN-SUFFIX,crashlytics.com,Netflix'
-    - 'DOMAIN-SUFFIX,culturedcode.com,Netflix'
-    - 'DOMAIN-SUFFIX,d.pr,Netflix'
-    - 'DOMAIN-SUFFIX,danilo.to,Netflix'
-    - 'DOMAIN-SUFFIX,dayone.me,Netflix'
-    - 'DOMAIN-SUFFIX,db.tt,Netflix'
-    - 'DOMAIN-SUFFIX,deskconnect.com,Netflix'
-    - 'DOMAIN-SUFFIX,disq.us,Netflix'
-    - 'DOMAIN-SUFFIX,disqus.com,Netflix'
-    - 'DOMAIN-SUFFIX,disquscdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,dnsimple.com,Netflix'
-    - 'DOMAIN-SUFFIX,docker.com,Netflix'
-    - 'DOMAIN-SUFFIX,dribbble.com,Netflix'
-    - 'DOMAIN-SUFFIX,droplr.com,Netflix'
-    - 'DOMAIN-SUFFIX,duckduckgo.com,Netflix'
-    - 'DOMAIN-SUFFIX,dueapp.com,Netflix'
-    - 'DOMAIN-SUFFIX,dytt8.net,Netflix'
-    - 'DOMAIN-SUFFIX,edgecastcdn.net,Netflix'
-    - 'DOMAIN-SUFFIX,edgekey.net,Netflix'
-    - 'DOMAIN-SUFFIX,edgesuite.net,Netflix'
-    - 'DOMAIN-SUFFIX,engadget.com,Netflix'
-    - 'DOMAIN-SUFFIX,entrust.net,Netflix'
-    - 'DOMAIN-SUFFIX,eurekavpt.com,Netflix'
-    - 'DOMAIN-SUFFIX,evernote.com,Netflix'
-    - 'DOMAIN-SUFFIX,fabric.io,Netflix'
-    - 'DOMAIN-SUFFIX,fast.com,Netflix'
-    - 'DOMAIN-SUFFIX,fastly.net,Netflix'
-    - 'DOMAIN-SUFFIX,fc2.com,Netflix'
-    - 'DOMAIN-SUFFIX,feedburner.com,Netflix'
-    - 'DOMAIN-SUFFIX,feedly.com,Netflix'
-    - 'DOMAIN-SUFFIX,feedsportal.com,Netflix'
-    - 'DOMAIN-SUFFIX,fiftythree.com,Netflix'
-    - 'DOMAIN-SUFFIX,firebaseio.com,Netflix'
-    - 'DOMAIN-SUFFIX,flexibits.com,Netflix'
-    - 'DOMAIN-SUFFIX,flickr.com,Netflix'
-    - 'DOMAIN-SUFFIX,flipboard.com,Netflix'
-    - 'DOMAIN-SUFFIX,g.co,Netflix'
-    - 'DOMAIN-SUFFIX,gabia.net,Netflix'
-    - 'DOMAIN-SUFFIX,geni.us,Netflix'
-    - 'DOMAIN-SUFFIX,gfx.ms,Netflix'
-    - 'DOMAIN-SUFFIX,ggpht.com,Netflix'
-    - 'DOMAIN-SUFFIX,ghostnoteapp.com,Netflix'
-    - 'DOMAIN-SUFFIX,git.io,Netflix'
-    - 'DOMAIN-KEYWORD,github,Netflix'
-    - 'DOMAIN-SUFFIX,globalsign.com,Netflix'
-    - 'DOMAIN-SUFFIX,gmodules.com,Netflix'
-    - 'DOMAIN-SUFFIX,godaddy.com,Netflix'
-    - 'DOMAIN-SUFFIX,golang.org,Netflix'
-    - 'DOMAIN-SUFFIX,gongm.in,Netflix'
-    - 'DOMAIN-SUFFIX,goo.gl,Netflix'
-    - 'DOMAIN-SUFFIX,goodreaders.com,Netflix'
-    - 'DOMAIN-SUFFIX,goodreads.com,Netflix'
-    - 'DOMAIN-SUFFIX,gravatar.com,Netflix'
-    - 'DOMAIN-SUFFIX,gstatic.com,Netflix'
-    - 'DOMAIN-SUFFIX,gvt0.com,Netflix'
-    - 'DOMAIN-SUFFIX,hockeyapp.net,Netflix'
-    - 'DOMAIN-SUFFIX,hotmail.com,Netflix'
-    - 'DOMAIN-SUFFIX,icons8.com,Netflix'
-    - 'DOMAIN-SUFFIX,ifixit.com,Netflix'
-    - 'DOMAIN-SUFFIX,ift.tt,Netflix'
-    - 'DOMAIN-SUFFIX,ifttt.com,Netflix'
-    - 'DOMAIN-SUFFIX,iherb.com,Netflix'
-    - 'DOMAIN-SUFFIX,imageshack.us,Netflix'
-    - 'DOMAIN-SUFFIX,img.ly,Netflix'
-    - 'DOMAIN-SUFFIX,imgur.com,Netflix'
-    - 'DOMAIN-SUFFIX,imore.com,Netflix'
-    - 'DOMAIN-SUFFIX,instapaper.com,Netflix'
-    - 'DOMAIN-SUFFIX,ipn.li,Netflix'
-    - 'DOMAIN-SUFFIX,is.gd,Netflix'
-    - 'DOMAIN-SUFFIX,issuu.com,Netflix'
-    - 'DOMAIN-SUFFIX,itgonglun.com,Netflix'
-    - 'DOMAIN-SUFFIX,itun.es,Netflix'
-    - 'DOMAIN-SUFFIX,ixquick.com,Netflix'
-    - 'DOMAIN-SUFFIX,j.mp,Netflix'
-    - 'DOMAIN-SUFFIX,js.revsci.net,Netflix'
-    - 'DOMAIN-SUFFIX,jshint.com,Netflix'
-    - 'DOMAIN-SUFFIX,jtvnw.net,Netflix'
-    - 'DOMAIN-SUFFIX,justgetflux.com,Netflix'
-    - 'DOMAIN-SUFFIX,kat.cr,Netflix'
-    - 'DOMAIN-SUFFIX,klip.me,Netflix'
-    - 'DOMAIN-SUFFIX,libsyn.com,Netflix'
-    - 'DOMAIN-SUFFIX,linkedin.com,Netflix'
-    - 'DOMAIN-SUFFIX,linode.com,Netflix'
-    - 'DOMAIN-SUFFIX,lithium.com,Netflix'
-    - 'DOMAIN-SUFFIX,littlehj.com,Netflix'
-    - 'DOMAIN-SUFFIX,live.com,Netflix'
-    - 'DOMAIN-SUFFIX,live.net,Netflix'
-    - 'DOMAIN-SUFFIX,livefilestore.com,Netflix'
-    - 'DOMAIN-SUFFIX,llnwd.net,Netflix'
-    - 'DOMAIN-SUFFIX,macid.co,Netflix'
-    - 'DOMAIN-SUFFIX,macromedia.com,Netflix'
-    - 'DOMAIN-SUFFIX,macrumors.com,Netflix'
-    - 'DOMAIN-SUFFIX,mashable.com,Netflix'
-    - 'DOMAIN-SUFFIX,mathjax.org,Netflix'
-    - 'DOMAIN-SUFFIX,medium.com,Netflix'
-    - 'DOMAIN-SUFFIX,mega.co.nz,Netflix'
-    - 'DOMAIN-SUFFIX,mega.nz,Netflix'
-    - 'DOMAIN-SUFFIX,megaupload.com,Netflix'
-    - 'DOMAIN-SUFFIX,microsofttranslator.com,Netflix'
-    - 'DOMAIN-SUFFIX,mindnode.com,Netflix'
-    - 'DOMAIN-SUFFIX,mobile01.com,Netflix'
-    - 'DOMAIN-SUFFIX,modmyi.com,Netflix'
-    - 'DOMAIN-SUFFIX,msedge.net,Netflix'
-    - 'DOMAIN-SUFFIX,myfontastic.com,Netflix'
-    - 'DOMAIN-SUFFIX,name.com,Netflix'
-    - 'DOMAIN-SUFFIX,nextmedia.com,Netflix'
-    - 'DOMAIN-SUFFIX,nsstatic.net,Netflix'
-    - 'DOMAIN-SUFFIX,nssurge.com,Netflix'
-    - 'DOMAIN-SUFFIX,nyt.com,Netflix'
-    - 'DOMAIN-SUFFIX,nytimes.com,Netflix'
-    - 'DOMAIN-SUFFIX,omnigroup.com,Netflix'
-    - 'DOMAIN-SUFFIX,onedrive.com,Netflix'
-    - 'DOMAIN-SUFFIX,onenote.com,Netflix'
-    - 'DOMAIN-SUFFIX,ooyala.com,Netflix'
-    - 'DOMAIN-SUFFIX,openvpn.net,Netflix'
-    - 'DOMAIN-SUFFIX,openwrt.org,Netflix'
-    - 'DOMAIN-SUFFIX,orkut.com,Netflix'
-    - 'DOMAIN-SUFFIX,osxdaily.com,Netflix'
-    - 'DOMAIN-SUFFIX,outlook.com,Netflix'
-    - 'DOMAIN-SUFFIX,ow.ly,Netflix'
-    - 'DOMAIN-SUFFIX,paddleapi.com,Netflix'
-    - 'DOMAIN-SUFFIX,parallels.com,Netflix'
-    - 'DOMAIN-SUFFIX,parse.com,Netflix'
-    - 'DOMAIN-SUFFIX,pdfexpert.com,Netflix'
-    - 'DOMAIN-SUFFIX,periscope.tv,Netflix'
-    - 'DOMAIN-SUFFIX,pinboard.in,Netflix'
-    - 'DOMAIN-SUFFIX,pinterest.com,Netflix'
-    - 'DOMAIN-SUFFIX,pixelmator.com,Netflix'
-    - 'DOMAIN-SUFFIX,pixiv.net,Netflix'
-    - 'DOMAIN-SUFFIX,playpcesor.com,Netflix'
-    - 'DOMAIN-SUFFIX,playstation.com,Netflix'
-    - 'DOMAIN-SUFFIX,playstation.com.hk,Netflix'
-    - 'DOMAIN-SUFFIX,playstation.net,Netflix'
-    - 'DOMAIN-SUFFIX,playstationnetwork.com,Netflix'
-    - 'DOMAIN-SUFFIX,pushwoosh.com,Netflix'
-    - 'DOMAIN-SUFFIX,rime.im,Netflix'
-    - 'DOMAIN-SUFFIX,servebom.com,Netflix'
-    - 'DOMAIN-SUFFIX,sfx.ms,Netflix'
-    - 'DOMAIN-SUFFIX,shadowsocks.org,Netflix'
-    - 'DOMAIN-SUFFIX,sharethis.com,Netflix'
-    - 'DOMAIN-SUFFIX,shazam.com,Netflix'
-    - 'DOMAIN-SUFFIX,skype.com,Netflix'
-    - 'DOMAIN-SUFFIX,smartdnsNetflix.com,Netflix'
-    - 'DOMAIN-SUFFIX,smartmailcloud.com,Netflix'
-    - 'DOMAIN-SUFFIX,sndcdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,sony.com,Netflix'
-    - 'DOMAIN-SUFFIX,soundcloud.com,Netflix'
-    - 'DOMAIN-SUFFIX,sourceforge.net,Netflix'
-    - 'DOMAIN-SUFFIX,spotify.com,Netflix'
-    - 'DOMAIN-SUFFIX,squarespace.com,Netflix'
-    - 'DOMAIN-SUFFIX,sstatic.net,Netflix'
-    - 'DOMAIN-SUFFIX,st.luluku.pw,Netflix'
-    - 'DOMAIN-SUFFIX,stackoverflow.com,Netflix'
-    - 'DOMAIN-SUFFIX,startpage.com,Netflix'
-    - 'DOMAIN-SUFFIX,staticflickr.com,Netflix'
-    - 'DOMAIN-SUFFIX,steamcommunity.com,Netflix'
-    - 'DOMAIN-SUFFIX,symauth.com,Netflix'
-    - 'DOMAIN-SUFFIX,symcb.com,Netflix'
-    - 'DOMAIN-SUFFIX,symcd.com,Netflix'
-    - 'DOMAIN-SUFFIX,tapbots.com,Netflix'
-    - 'DOMAIN-SUFFIX,tapbots.net,Netflix'
-    - 'DOMAIN-SUFFIX,tdesktop.com,Netflix'
-    - 'DOMAIN-SUFFIX,techcrunch.com,Netflix'
-    - 'DOMAIN-SUFFIX,techsmith.com,Netflix'
-    - 'DOMAIN-SUFFIX,thepiratebay.org,Netflix'
-    - 'DOMAIN-SUFFIX,theverge.com,Netflix'
-    - 'DOMAIN-SUFFIX,time.com,Netflix'
-    - 'DOMAIN-SUFFIX,timeinc.net,Netflix'
-    - 'DOMAIN-SUFFIX,tiny.cc,Netflix'
-    - 'DOMAIN-SUFFIX,tinypic.com,Netflix'
-    - 'DOMAIN-SUFFIX,tmblr.co,Netflix'
-    - 'DOMAIN-SUFFIX,todoist.com,Netflix'
-    - 'DOMAIN-SUFFIX,trello.com,Netflix'
-    - 'DOMAIN-SUFFIX,trustasiassl.com,Netflix'
-    - 'DOMAIN-SUFFIX,tumblr.co,Netflix'
-    - 'DOMAIN-SUFFIX,tumblr.com,Netflix'
-    - 'DOMAIN-SUFFIX,tweetdeck.com,Netflix'
-    - 'DOMAIN-SUFFIX,tweetmarker.net,Netflix'
-    - 'DOMAIN-SUFFIX,twitch.tv,Netflix'
-    - 'DOMAIN-SUFFIX,txmblr.com,Netflix'
-    - 'DOMAIN-SUFFIX,typekit.net,Netflix'
-    - 'DOMAIN-SUFFIX,ubertags.com,Netflix'
-    - 'DOMAIN-SUFFIX,ublock.org,Netflix'
-    - 'DOMAIN-SUFFIX,ubnt.com,Netflix'
-    - 'DOMAIN-SUFFIX,ulyssesapp.com,Netflix'
-    - 'DOMAIN-SUFFIX,urchin.com,Netflix'
-    - 'DOMAIN-SUFFIX,usertrust.com,Netflix'
-    - 'DOMAIN-SUFFIX,v.gd,Netflix'
-    - 'DOMAIN-SUFFIX,v2ex.com,Netflix'
-    - 'DOMAIN-SUFFIX,vimeo.com,Netflix'
-    - 'DOMAIN-SUFFIX,vimeocdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,vine.co,Netflix'
-    - 'DOMAIN-SUFFIX,vivaldi.com,Netflix'
-    - 'DOMAIN-SUFFIX,vox-cdn.com,Netflix'
-    - 'DOMAIN-SUFFIX,vsco.co,Netflix'
-    - 'DOMAIN-SUFFIX,vultr.com,Netflix'
-    - 'DOMAIN-SUFFIX,w.org,Netflix'
-    - 'DOMAIN-SUFFIX,w3schools.com,Netflix'
-    - 'DOMAIN-SUFFIX,webtype.com,Netflix'
-    - 'DOMAIN-SUFFIX,wikiwand.com,Netflix'
-    - 'DOMAIN-SUFFIX,wikileaks.org,Netflix'
-    - 'DOMAIN-SUFFIX,wikimedia.org,Netflix'
-    - 'DOMAIN-SUFFIX,wikipedia.com,Netflix'
-    - 'DOMAIN-SUFFIX,wikipedia.org,Netflix'
-    - 'DOMAIN-SUFFIX,windows.com,Netflix'
-    - 'DOMAIN-SUFFIX,windows.net,Netflix'
-    - 'DOMAIN-SUFFIX,wire.com,Netflix'
-    - 'DOMAIN-SUFFIX,wordpress.com,Netflix'
-    - 'DOMAIN-SUFFIX,workflowy.com,Netflix'
-    - 'DOMAIN-SUFFIX,wp.com,Netflix'
-    - 'DOMAIN-SUFFIX,wsj.com,Netflix'
-    - 'DOMAIN-SUFFIX,wsj.net,Netflix'
-    - 'DOMAIN-SUFFIX,xda-developers.com,Netflix'
-    - 'DOMAIN-SUFFIX,xeeno.com,Netflix'
-    - 'DOMAIN-SUFFIX,xiti.com,Netflix'
-    - 'DOMAIN-SUFFIX,yahoo.com,Netflix'
-    - 'DOMAIN-SUFFIX,yimg.com,Netflix'
-    - 'DOMAIN-SUFFIX,ying.com,Netflix'
-    - 'DOMAIN-SUFFIX,yoyo.org,Netflix'
-    - 'DOMAIN-SUFFIX,ytimg.com,Netflix'
-    - 'DOMAIN-SUFFIX,telegra.ph,Netflix'
-    - 'DOMAIN-SUFFIX,telegram.org,Netflix'
-    - 'IP-CIDR,91.108.4.0/22,Netflix,no-resolve'
-    - 'IP-CIDR,91.108.8.0/21,Netflix,no-resolve'
-    - 'IP-CIDR,91.108.16.0/22,Netflix,no-resolve'
-    - 'IP-CIDR,91.108.56.0/22,Netflix,no-resolve'
-    - 'IP-CIDR,149.154.160.0/20,Netflix,no-resolve'
-    - 'IP-CIDR6,2001:67c:4e8::/48,Netflix,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23d::/48,Netflix,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23f::/48,Netflix,no-resolve'
-    - 'IP-CIDR,120.232.181.162/32,Netflix,no-resolve'
-    - 'IP-CIDR,120.241.147.226/32,Netflix,no-resolve'
-    - 'IP-CIDR,120.253.253.226/32,Netflix,no-resolve'
-    - 'IP-CIDR,120.253.255.162/32,Netflix,no-resolve'
-    - 'IP-CIDR,120.253.255.34/32,Netflix,no-resolve'
-    - 'IP-CIDR,120.253.255.98/32,Netflix,no-resolve'
-    - 'IP-CIDR,180.163.150.162/32,Netflix,no-resolve'
-    - 'IP-CIDR,180.163.150.34/32,Netflix,no-resolve'
-    - 'IP-CIDR,180.163.151.162/32,Netflix,no-resolve'
-    - 'IP-CIDR,180.163.151.34/32,Netflix,no-resolve'
-    - 'IP-CIDR,203.208.39.0/24,Netflix,no-resolve'
-    - 'IP-CIDR,203.208.40.0/24,Netflix,no-resolve'
-    - 'IP-CIDR,203.208.41.0/24,Netflix,no-resolve'
-    - 'IP-CIDR,203.208.43.0/24,Netflix,no-resolve'
-    - 'IP-CIDR,203.208.50.0/24,Netflix,no-resolve'
-    - 'IP-CIDR,220.181.174.162/32,Netflix,no-resolve'
-    - 'IP-CIDR,220.181.174.226/32,Netflix,no-resolve'
-    - 'IP-CIDR,220.181.174.34/32,Netflix,no-resolve'
-    - 'DOMAIN,injections.adguard.org,DIRECT'
-    - 'DOMAIN,local.adguard.org,DIRECT'
-    - 'DOMAIN-SUFFIX,local,DIRECT'
-    - 'IP-CIDR,127.0.0.0/8,DIRECT'
-    - 'IP-CIDR,172.16.0.0/12,DIRECT'
-    - 'IP-CIDR,192.168.0.0/16,DIRECT'
-    - 'IP-CIDR,10.0.0.0/8,DIRECT'
-    - 'IP-CIDR,17.0.0.0/8,DIRECT'
-    - 'IP-CIDR,100.64.0.0/10,DIRECT'
-    - 'IP-CIDR,224.0.0.0/4,DIRECT'
-    - 'IP-CIDR6,fe80::/10,DIRECT'
-    - 'GEOIP,CN,DIRECT'
-    - 'MATCH,Netflix'
+ - DOMAIN-SUFFIX,digicert.com,❤️ YouTube梦歌
+ - DOMAIN,ocsp.comodoca.com,❤️ YouTube梦歌
+ - DOMAIN,ocsp.usertrust.com,❤️ YouTube梦歌
+ - DOMAIN,ocsp.sectigo.com,❤️ YouTube梦歌
+ - DOMAIN,ocsp.verisign.net,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,linkedin,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,1password.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,adguard.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bit.no.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,btlibrary.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,cccat.io,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,cloudcone.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dubox.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gameloft.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,garena.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,hoyolab.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,inoreader.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ip138.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,myteamspeak.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,notion.so,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ping.pe,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,reddit.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,teddysun.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tumbex.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,twdvd.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,unsplash.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,eu,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,hk,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,jp,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kr,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,sg,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tw,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,uk,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,us,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,1e100,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,abema,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,appledaily,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,avtb,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,beetalk,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,blogspot,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,dropbox,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,facebook,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,fbcdn,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,github,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,gmail,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,google,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,instagram,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,porn,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,sci-hub,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,spotify,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,telegram,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,twitter,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,whatsapp,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,youtube,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,4sqi.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,a248.e.akamai.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,adobedtm.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ampproject.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,android.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,aolcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,apkmirror.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,apkpure.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,app-measurement.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,appspot.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,archive.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,armorgames.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,aspnetcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,awsstatic.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,azureedge.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,azurewebsites.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bandwagonhost.com\,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bkrtx.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogger.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogsmithmedia.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogspot.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogspot.hk,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,blogspot.jp,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bloomberg.cn,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bloomberg.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,box.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,cachefly.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,cdnst.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,cloudfront.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,daum.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,demdex.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,deskconnect.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,disqus.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,disquscdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dropbox.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dropboxapi.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dropboxstatic.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dropboxusercontent.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,duckduckgo.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,edgecastcdn.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,edgekey.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,edgesuite.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,eurekavpt.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fastmail.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,firebaseio.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,flickr.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,flipboard.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gfx.ms,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gongm.in,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,hulu.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,id.heroku.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,io.io,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,issuu.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ixquick.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,jtvnw.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kat.cr,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kik.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kobo.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kobobooks.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,livefilestore.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,llnwd.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,macrumors.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,medium.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,mega.nz,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,megaupload.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,messenger.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,netdna-cdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,nintendo.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,nsstatic.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,nytstyle.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,overcast.fm,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,periscope.tv,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pinimg.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pinterest.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,potato.im,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,prfct.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pscp.tv,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,quora.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,resilio.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,sfx.ms,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,slack-edge.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,smartdnsproxy.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,sndcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,soundcloud.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,startpage.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,staticflickr.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,symauth.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,symcb.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,symcd.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,textnow.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,textnow.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,thefacebook.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,thepiratebay.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,torproject.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,trustasiassl.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tumblr.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tumblr.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tvb.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,txmblr.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,v2ex.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,vimeo.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,vine.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,vox-cdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,amazon.co.jp,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,amazon.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,amazonaws.com,❤️ YouTube梦歌
+ - IP-CIDR,13.32.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,13.35.0.0/17,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,18.184.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,18.194.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,18.208.0.0/13,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,18.232.0.0/14,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,52.58.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,52.74.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,52.77.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,52.84.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,52.200.0.0/13,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,54.93.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,54.156.0.0/14,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,54.226.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,54.230.156.0/22,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-KEYWORD,uk-live,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bbc.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bbc.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discord.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discord.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discord.gg,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discord.media,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discordapp.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,discordapp.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,facebook.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fb.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fb.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fbcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fbcdn.net,❤️ YouTube梦歌
+ - IP-CIDR,31.13.24.0/21,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,31.13.64.0/18,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,45.64.40.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,66.220.144.0/20,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,69.63.176.0/20,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,69.171.224.0/19,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,74.119.76.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,103.4.96.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,129.134.0.0/17,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,157.240.0.0/17,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,173.252.64.0/18,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,179.60.192.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,185.60.216.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,204.15.20.0/22,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-SUFFIX,github.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,github.io,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,githubapp.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,githubassets.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,githubusercontent.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,1e100.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,2mdn.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,app-measurement.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,g.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ggpht.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,goo.gl,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,googleapis.cn,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,googleapis.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gstatic.cn,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gstatic.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gvt0.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gvt1.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gvt2.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,gvt3.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,youtu.be,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,youtube-nocookie.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,youtube.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,yt.be,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ytimg.com,❤️ YouTube梦歌
+ - IP-CIDR,74.125.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,173.194.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.232.181.162/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.241.147.226/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.253.253.226/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.253.255.162/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.253.255.34/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,120.253.255.98/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,180.163.150.162/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,180.163.150.34/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,180.163.151.162/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,180.163.151.34/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.208.39.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.208.40.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.208.41.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.208.43.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.208.50.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,220.181.174.162/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,220.181.174.226/32,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,220.181.174.34/32,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-SUFFIX,cdninstagram.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,instagram.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,instagr.am,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kakao.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kakao.co.kr,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,kakaocdn.net,❤️ YouTube梦歌
+ - IP-CIDR,1.201.0.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,27.0.236.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,103.27.148.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,103.246.56.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,110.76.140.0/22,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,113.61.104.0/22,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-SUFFIX,lin.ee,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,line-apps.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,line-cdn.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,line-scdn.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,line.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,line.naver.jp,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,nhncorp.jp,❤️ YouTube梦歌
+ - IP-CIDR,103.2.28.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,103.2.30.0/23,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,119.235.224.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,119.235.232.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,119.235.235.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,119.235.236.0/23,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,147.92.128.0/17,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,203.104.128.0/19,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-KEYWORD,1drv,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,onedrive,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,skydrive,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,livefilestore.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,oneclient.sfx.ms,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,onedrive.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,onedrive.live.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,photos.live.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,skydrive.wns.windows.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,spoprod-a.akamaihd.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,storage.live.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,storage.msn.com,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,porn,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,8teenxxx.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ahcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bcvcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,bongacams.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,chaturbate.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,dditscdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,livejasmin.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,phncdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,phprcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pornhub.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pornhubpremium.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,rdtcdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,redtube.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,sb-cd.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,spankbang.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,t66y.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xhamster.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xnxx-cdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xnxx.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xvideos-cdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,xvideos.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ypncdn.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pixiv.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,pximg.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,amplitude.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,firebaseio.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,hockeyapp.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,readdle.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,smartmailcloud.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,fanatical.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,humblebundle.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,steamcommunity.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tap.io,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,taptap.tw,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,twitch.tv,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ttvnw.net,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,jtvnw.net,❤️ YouTube梦歌
+ - DOMAIN-KEYWORD,ttvnw,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,t.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,twimg.co,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,twimg.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,twimg.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,t.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,tdesktop.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,telegra.ph,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,telegram.me,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,telegram.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,telesco.pe,❤️ YouTube梦歌
+ - IP-CIDR,91.108.0.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,109.239.140.0/24,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,149.154.160.0/20,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR6,2001:67c:4e8::/48,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR6,2001:b28:f23d::/48,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR6,2001:b28:f23f::/48,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-SUFFIX,terabox.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,teraboxcdn.com,❤️ YouTube梦歌
+ - IP-CIDR,18.194.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,34.224.0.0/12,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,54.242.0.0/15,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,50.22.198.204/30,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,208.43.122.128/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,108.168.174.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,173.192.231.32/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,158.85.5.192/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,174.37.243.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,158.85.46.128/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,173.192.222.160/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,184.173.128.0/17,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,158.85.224.160/27,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,75.126.150.0/16,❤️ YouTube梦歌,no-resolve
+ - IP-CIDR,69.171.235.0/16,❤️ YouTube梦歌,no-resolve
+ - DOMAIN-SUFFIX,mediawiki.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikibooks.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikidata.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikileaks.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikimedia.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikinews.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikipedia.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikiquote.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikisource.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikiversity.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wikivoyage.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,wiktionary.org,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,neulion.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,icntv.xyz,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,flzbcdn.xyz,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,ocnttv.com,❤️ YouTube梦歌
+ - DOMAIN-SUFFIX,sub.221515.xyz,☁️ Domestic
+ - DOMAIN-SUFFIX,221515.xyz,☁️ Domestic
+ - DOMAIN-SUFFIX,hi.221616.xyz,☁️ Domestic
+ - DOMAIN-SUFFIX,sublink.221616.xyz,☁️ Domestic
+ - DOMAIN-SUFFIX,statics.teams.cdn.office.net,☁️ Domestic
+ - DOMAIN-SUFFIX,hi.moon365.workers.dev,☁️ Domestic
+ - DOMAIN-KEYWORD,officeapps.live.com,☁️ Domestic
+ - DOMAIN-KEYWORD,teams.skype.com,☁️ Domestic
+ - DOMAIN-KEYWORD,teams.live.com,☁️ Domestic
+ - DOMAIN-KEYWORD,cdn.live.net,☁️ Domestic
+ - DOMAIN-KEYWORD,outlook,☁️ Domestic
+ - PROCESS-NAME,aria2c.exe,☁️ Domestic
+ - PROCESS-NAME,fdm.exe,☁️ Domestic
+ - PROCESS-NAME,Folx.exe,☁️ Domestic
+ - PROCESS-NAME,NetTransport.exe,☁️ Domestic
+ - PROCESS-NAME,Thunder.exe,☁️ Domestic
+ - PROCESS-NAME,Transmission.exe,☁️ Domestic
+ - PROCESS-NAME,uTorrent.exe,☁️ Domestic
+ - PROCESS-NAME,WebTorrent.exe,☁️ Domestic
+ - PROCESS-NAME,WebTorrent Helper.exe,☁️ Domestic
+ - DOMAIN-SUFFIX,smtp,☁️ Domestic
+ - DOMAIN-KEYWORD,aria2,☁️ Domestic
+ - PROCESS-NAME,DownloadService.exe,☁️ Domestic
+ - PROCESS-NAME,Weiyun.exe,☁️ Domestic
+ - DOMAIN-SUFFIX,cn,☁️ Domestic
+ - DOMAIN-KEYWORD,-cn,☁️ Domestic
+ - DOMAIN-SUFFIX,baidu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,baidubcr.com,☁️ Domestic
+ - DOMAIN-SUFFIX,bdstatic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,yunjiasu-cdn.net,☁️ Domestic
+ - DOMAIN-SUFFIX,taobao.com,☁️ Domestic
+ - DOMAIN-SUFFIX,alicdn.com,☁️ Domestic
+ - DOMAIN,blzddist1-a.akamaihd.net,☁️ Domestic
+ - DOMAIN,cdn.angruo.com,☁️ Domestic
+ - DOMAIN,download.jetbrains.com,☁️ Domestic
+ - DOMAIN,file-igamecj.akamaized.net,☁️ Domestic
+ - DOMAIN,images-cn.ssl-images-amazon.com,☁️ Domestic
+ - DOMAIN,officecdn-microsoft-com.akamaized.net,☁️ Domestic
+ - DOMAIN,speedtest.macpaw.com,☁️ Domestic
+ - DOMAIN-SUFFIX,126.net,☁️ Domestic
+ - DOMAIN-SUFFIX,127.net,☁️ Domestic
+ - DOMAIN-SUFFIX,163.com,☁️ Domestic
+ - DOMAIN-SUFFIX,163yun.com,☁️ Domestic
+ - DOMAIN-SUFFIX,21cn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,343480.com,☁️ Domestic
+ - DOMAIN-SUFFIX,360buyimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,360in.com,☁️ Domestic
+ - DOMAIN-SUFFIX,51ym.me,☁️ Domestic
+ - DOMAIN-SUFFIX,71.am.com,☁️ Domestic
+ - DOMAIN-SUFFIX,8686c.com,☁️ Domestic
+ - DOMAIN-SUFFIX,abchina.com,☁️ Domestic
+ - DOMAIN-SUFFIX,accuweather.com,☁️ Domestic
+ - DOMAIN-SUFFIX,acgvideo.com,☁️ Domestic
+ - DOMAIN-SUFFIX,acm.org,☁️ Domestic
+ - DOMAIN-SUFFIX,acs.org,☁️ Domestic
+ - DOMAIN-SUFFIX,aicoinstorge.com,☁️ Domestic
+ - DOMAIN-SUFFIX,aip.org,☁️ Domestic
+ - DOMAIN-SUFFIX,air-matters.com,☁️ Domestic
+ - DOMAIN-SUFFIX,air-matters.io,☁️ Domestic
+ - DOMAIN-SUFFIX,aixifan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,akadns.net,☁️ Domestic
+ - DOMAIN-SUFFIX,alibaba.com,☁️ Domestic
+ - DOMAIN-SUFFIX,alikunlun.com,☁️ Domestic
+ - DOMAIN-SUFFIX,alipay.com,☁️ Domestic
+ - DOMAIN-SUFFIX,amap.com,☁️ Domestic
+ - DOMAIN-SUFFIX,amd.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ams.org,☁️ Domestic
+ - DOMAIN-SUFFIX,animebytes.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,annualreviews.org,☁️ Domestic
+ - DOMAIN-SUFFIX,aps.org,☁️ Domestic
+ - DOMAIN-SUFFIX,ascelibrary.org,☁️ Domestic
+ - DOMAIN-SUFFIX,asm.org,☁️ Domestic
+ - DOMAIN-SUFFIX,asme.org,☁️ Domestic
+ - DOMAIN-SUFFIX,astm.org,☁️ Domestic
+ - DOMAIN-SUFFIX,autonavi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,awesome-hd.me,☁️ Domestic
+ - DOMAIN-SUFFIX,b612.net,☁️ Domestic
+ - DOMAIN-SUFFIX,baduziyuan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,battle.net,☁️ Domestic
+ - DOMAIN-SUFFIX,bdatu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,beitaichufang.com,☁️ Domestic
+ - DOMAIN-SUFFIX,biliapi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,biliapi.net,☁️ Domestic
+ - DOMAIN-SUFFIX,bilibili.com,☁️ Domestic
+ - DOMAIN-SUFFIX,bilibili.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,bjango.com,☁️ Domestic
+ - DOMAIN-SUFFIX,blizzard.com,☁️ Domestic
+ - DOMAIN-SUFFIX,bmj.com,☁️ Domestic
+ - DOMAIN-SUFFIX,booking.com,☁️ Domestic
+ - DOMAIN-SUFFIX,broadcasthe.net,☁️ Domestic
+ - DOMAIN-SUFFIX,bstatic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cailianpress.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cambridge.org,☁️ Domestic
+ - DOMAIN-SUFFIX,camera360.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cas.org,☁️ Domestic
+ - DOMAIN-SUFFIX,ccgslb.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ccgslb.net,☁️ Domestic
+ - DOMAIN-SUFFIX,cctv.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cctvpic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,chdbits.co,☁️ Domestic
+ - DOMAIN-SUFFIX,chinanetcenter.com,☁️ Domestic
+ - DOMAIN-SUFFIX,chinaso.com,☁️ Domestic
+ - DOMAIN-SUFFIX,chua.pro,☁️ Domestic
+ - DOMAIN-SUFFIX,chuimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,chunyu.mobi,☁️ Domestic
+ - DOMAIN-SUFFIX,chushou.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,clarivate.com,☁️ Domestic
+ - DOMAIN-SUFFIX,classix-unlimited.co.uk,☁️ Domestic
+ - DOMAIN-SUFFIX,cmbchina.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cmbimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cn,☁️ Domestic
+ - DOMAIN-SUFFIX,com-hs-hkdy.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ctrip.com,☁️ Domestic
+ - DOMAIN-SUFFIX,czybjz.com,☁️ Domestic
+ - DOMAIN-SUFFIX,dandanzan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,dfcfw.com,☁️ Domestic
+ - DOMAIN-SUFFIX,didialift.com,☁️ Domestic
+ - DOMAIN-SUFFIX,didiglobal.com,☁️ Domestic
+ - DOMAIN-SUFFIX,dingtalk.com,☁️ Domestic
+ - DOMAIN-SUFFIX,docschina.org,☁️ Domestic
+ - DOMAIN-SUFFIX,douban.com,☁️ Domestic
+ - DOMAIN-SUFFIX,doubanio.com,☁️ Domestic
+ - DOMAIN-SUFFIX,douyu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,duokan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,dxycdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,dytt8.net,☁️ Domestic
+ - DOMAIN-SUFFIX,eastmoney.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ebscohost.com,☁️ Domestic
+ - DOMAIN-SUFFIX,emerald.com,☁️ Domestic
+ - DOMAIN-SUFFIX,empornium.me,☁️ Domestic
+ - DOMAIN-SUFFIX,engineeringvillage.com,☁️ Domestic
+ - DOMAIN-SUFFIX,eudic.net,☁️ Domestic
+ - DOMAIN-SUFFIX,feiliao.com,☁️ Domestic
+ - DOMAIN-SUFFIX,feng.com,☁️ Domestic
+ - DOMAIN-SUFFIX,fengkongcloud.com,☁️ Domestic
+ - DOMAIN-SUFFIX,fjhps.com,☁️ Domestic
+ - DOMAIN-SUFFIX,frdic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,futu5.com,☁️ Domestic
+ - DOMAIN-SUFFIX,futunn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,gandi.net,☁️ Domestic
+ - DOMAIN-SUFFIX,gazellegames.net,☁️ Domestic
+ - DOMAIN-SUFFIX,geilicdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,getpricetag.com,☁️ Domestic
+ - DOMAIN-SUFFIX,gifshow.com,☁️ Domestic
+ - DOMAIN-SUFFIX,godic.net,☁️ Domestic
+ - DOMAIN-SUFFIX,gtimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,hdbits.org,☁️ Domestic
+ - DOMAIN-SUFFIX,hdchina.org,☁️ Domestic
+ - DOMAIN-SUFFIX,hdhome.org,☁️ Domestic
+ - DOMAIN-SUFFIX,hdsky.me,☁️ Domestic
+ - DOMAIN-SUFFIX,hdslb.com,☁️ Domestic
+ - DOMAIN-SUFFIX,hicloud.com,☁️ Domestic
+ - DOMAIN-SUFFIX,hitv.com,☁️ Domestic
+ - DOMAIN-SUFFIX,hongxiu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,hostbuf.com,☁️ Domestic
+ - DOMAIN-SUFFIX,huxiucdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,huya.com,☁️ Domestic
+ - DOMAIN-SUFFIX,icetorrent.org,☁️ Domestic
+ - DOMAIN-SUFFIX,icevirtuallibrary.com,☁️ Domestic
+ - DOMAIN-SUFFIX,iciba.com,☁️ Domestic
+ - DOMAIN-SUFFIX,idqqimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ieee.org,☁️ Domestic
+ - DOMAIN-SUFFIX,iesdouyin.com,☁️ Domestic
+ - DOMAIN-SUFFIX,igamecj.com,☁️ Domestic
+ - DOMAIN-SUFFIX,imf.org,☁️ Domestic
+ - DOMAIN-SUFFIX,infinitynewtab.com,☁️ Domestic
+ - DOMAIN-SUFFIX,iop.org,☁️ Domestic
+ - DOMAIN-SUFFIX,ip-cdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ip.la,☁️ Domestic
+ - DOMAIN-SUFFIX,ipip.net,☁️ Domestic
+ - DOMAIN-SUFFIX,ipv6-test.com,☁️ Domestic
+ - DOMAIN-SUFFIX,iqiyi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,iqiyipic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ithome.com,☁️ Domestic
+ - DOMAIN-SUFFIX,jamanetwork.com,☁️ Domestic
+ - DOMAIN-SUFFIX,java.com,☁️ Domestic
+ - DOMAIN-SUFFIX,jd.com,☁️ Domestic
+ - DOMAIN-SUFFIX,jd.hk,☁️ Domestic
+ - DOMAIN-SUFFIX,jdpay.com,☁️ Domestic
+ - DOMAIN-SUFFIX,jhu.edu,☁️ Domestic
+ - DOMAIN-SUFFIX,jidian.im,☁️ Domestic
+ - DOMAIN-SUFFIX,jpopsuki.eu,☁️ Domestic
+ - DOMAIN-SUFFIX,jstor.org,☁️ Domestic
+ - DOMAIN-SUFFIX,jstucdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,kaiyanapp.com,☁️ Domestic
+ - DOMAIN-SUFFIX,karger.com,☁️ Domestic
+ - DOMAIN-SUFFIX,kaspersky-labs.com,☁️ Domestic
+ - DOMAIN-SUFFIX,keepcdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,keepfrds.com,☁️ Domestic
+ - DOMAIN-SUFFIX,kkmh.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ksosoft.com,☁️ Domestic
+ - DOMAIN-SUFFIX,kuyunbo.club,☁️ Domestic
+ - DOMAIN-SUFFIX,libguides.com,☁️ Domestic
+ - DOMAIN-SUFFIX,livechina.com,☁️ Domestic
+ - DOMAIN-SUFFIX,lofter.com,☁️ Domestic
+ - DOMAIN-SUFFIX,loli.net,☁️ Domestic
+ - DOMAIN-SUFFIX,luojilab.com,☁️ Domestic
+ - DOMAIN-SUFFIX,m-team.cc,☁️ Domestic
+ - DOMAIN-SUFFIX,madsrevolution.net,☁️ Domestic
+ - DOMAIN-SUFFIX,maoyan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,maoyun.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,meipai.com,☁️ Domestic
+ - DOMAIN-SUFFIX,meitu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,meituan.com,☁️ Domestic
+ - DOMAIN-SUFFIX,meituan.net,☁️ Domestic
+ - DOMAIN-SUFFIX,meitudata.com,☁️ Domestic
+ - DOMAIN-SUFFIX,meitustat.com,☁️ Domestic
+ - DOMAIN-SUFFIX,meixincdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,mgtv.com,☁️ Domestic
+ - DOMAIN-SUFFIX,mi-img.com,☁️ Domestic
+ - DOMAIN-SUFFIX,microsoft.com,☁️ Domestic
+ - DOMAIN-SUFFIX,miui.com,☁️ Domestic
+ - DOMAIN-SUFFIX,miwifi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,mobike.com,☁️ Domestic
+ - DOMAIN-SUFFIX,moke.com,☁️ Domestic
+ - DOMAIN-SUFFIX,morethan.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,mpg.de,☁️ Domestic
+ - DOMAIN-SUFFIX,msecnd.net,☁️ Domestic
+ - DOMAIN-SUFFIX,mubu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,mxhichina.com,☁️ Domestic
+ - DOMAIN-SUFFIX,myanonamouse.net,☁️ Domestic
+ - DOMAIN-SUFFIX,myapp.com,☁️ Domestic
+ - DOMAIN-SUFFIX,myilibrary.com,☁️ Domestic
+ - DOMAIN-SUFFIX,myqcloud.com,☁️ Domestic
+ - DOMAIN-SUFFIX,myzaker.com,☁️ Domestic
+ - DOMAIN-SUFFIX,nanyangpt.com,☁️ Domestic
+ - DOMAIN-SUFFIX,nature.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ncore.cc,☁️ Domestic
+ - DOMAIN-SUFFIX,netease.com,☁️ Domestic
+ - DOMAIN-SUFFIX,netspeedtestmaster.com,☁️ Domestic
+ - DOMAIN-SUFFIX,nim-lang-cn.org,☁️ Domestic
+ - DOMAIN-SUFFIX,nvidia.com,☁️ Domestic
+ - DOMAIN-SUFFIX,oecd-ilibrary.org,☁️ Domestic
+ - DOMAIN-SUFFIX,office365.com,☁️ Domestic
+ - DOMAIN-SUFFIX,open.cd,☁️ Domestic
+ - DOMAIN-SUFFIX,oracle.com,☁️ Domestic
+ - DOMAIN-SUFFIX,osapublishing.org,☁️ Domestic
+ - DOMAIN-SUFFIX,oup.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ourbits.club,☁️ Domestic
+ - DOMAIN-SUFFIX,ourdvs.com,☁️ Domestic
+ - DOMAIN-SUFFIX,outlook.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ovid.com,☁️ Domestic
+ - DOMAIN-SUFFIX,oxfordartonline.com,☁️ Domestic
+ - DOMAIN-SUFFIX,oxfordbibliographies.com,☁️ Domestic
+ - DOMAIN-SUFFIX,oxfordmusiconline.com,☁️ Domestic
+ - DOMAIN-SUFFIX,passthepopcorn.me,☁️ Domestic
+ - DOMAIN-SUFFIX,paypal.com,☁️ Domestic
+ - DOMAIN-SUFFIX,paypalobjects.com,☁️ Domestic
+ - DOMAIN-SUFFIX,pnas.org,☁️ Domestic
+ - DOMAIN-SUFFIX,privatehd.to,☁️ Domestic
+ - DOMAIN-SUFFIX,proquest.com,☁️ Domestic
+ - DOMAIN-SUFFIX,pstatp.com,☁️ Domestic
+ - DOMAIN-SUFFIX,pterclub.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qdaily.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qhimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qhres.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qidian.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qq.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qyer.com,☁️ Domestic
+ - DOMAIN-SUFFIX,qyerstatic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,raychase.net,☁️ Domestic
+ - DOMAIN-SUFFIX,redacted.ch,☁️ Domestic
+ - DOMAIN-SUFFIX,ronghub.com,☁️ Domestic
+ - DOMAIN-SUFFIX,rsc.org,☁️ Domestic
+ - DOMAIN-SUFFIX,ruguoapp.com,☁️ Domestic
+ - DOMAIN-SUFFIX,s-microsoft.com,☁️ Domestic
+ - DOMAIN-SUFFIX,s-reader.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sagepub.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sankuai.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sciencedirect.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sciencemag.org,☁️ Domestic
+ - DOMAIN-SUFFIX,scomper.me,☁️ Domestic
+ - DOMAIN-SUFFIX,scopus.com,☁️ Domestic
+ - DOMAIN-SUFFIX,seafile.com,☁️ Domestic
+ - DOMAIN-SUFFIX,servicewechat.com,☁️ Domestic
+ - DOMAIN-SUFFIX,siam.org,☁️ Domestic
+ - DOMAIN-SUFFIX,sina.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sm.ms,☁️ Domestic
+ - DOMAIN-SUFFIX,smzdm.com,☁️ Domestic
+ - DOMAIN-SUFFIX,snapdrop.net,☁️ Domestic
+ - DOMAIN-SUFFIX,snssdk.com,☁️ Domestic
+ - DOMAIN-SUFFIX,snwx.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sogo.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sogou.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sogoucdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sohu-inc.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sohu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,sohucs.com,☁️ Domestic
+ - DOMAIN-SUFFIX,soku.com,☁️ Domestic
+ - DOMAIN-SUFFIX,spiedigitallibrary.org,☁️ Domestic
+ - DOMAIN-SUFFIX,springer.com,☁️ Domestic
+ - DOMAIN-SUFFIX,springerlink.com,☁️ Domestic
+ - DOMAIN-SUFFIX,springsunday.net,☁️ Domestic
+ - DOMAIN-SUFFIX,sspai.com,☁️ Domestic
+ - DOMAIN-SUFFIX,staticdn.net,☁️ Domestic
+ - DOMAIN-SUFFIX,steam-chat.com,☁️ Domestic
+ - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,☁️ Domestic
+ - DOMAIN-SUFFIX,steamcontent.com,☁️ Domestic
+ - DOMAIN-SUFFIX,steamgames.com,☁️ Domestic
+ - DOMAIN-SUFFIX,steampowered.com,☁️ Domestic
+ - DOMAIN-SUFFIX,steamstat.us,☁️ Domestic
+ - DOMAIN-SUFFIX,steamstatic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,steamusercontent.com,☁️ Domestic
+ - DOMAIN-SUFFIX,takungpao.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tandfonline.com,☁️ Domestic
+ - DOMAIN-SUFFIX,teamviewer.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tencent-cloud.net,☁️ Domestic
+ - DOMAIN-SUFFIX,tencent.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tenpay.com,☁️ Domestic
+ - DOMAIN-SUFFIX,test-ipv6.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tianyancha.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tjupt.org,☁️ Domestic
+ - DOMAIN-SUFFIX,tmall.com,☁️ Domestic
+ - DOMAIN-SUFFIX,tmall.hk,☁️ Domestic
+ - DOMAIN-SUFFIX,totheglory.im,☁️ Domestic
+ - DOMAIN-SUFFIX,toutiao.com,☁️ Domestic
+ - DOMAIN-SUFFIX,udache.com,☁️ Domestic
+ - DOMAIN-SUFFIX,udacity.com,☁️ Domestic
+ - DOMAIN-SUFFIX,un.org,☁️ Domestic
+ - DOMAIN-SUFFIX,uni-bielefeld.de,☁️ Domestic
+ - DOMAIN-SUFFIX,uning.com,☁️ Domestic
+ - DOMAIN-SUFFIX,v-56.com,☁️ Domestic
+ - DOMAIN-SUFFIX,visualstudio.com,☁️ Domestic
+ - DOMAIN-SUFFIX,vmware.com,☁️ Domestic
+ - DOMAIN-SUFFIX,wangsu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,weather.com,☁️ Domestic
+ - DOMAIN-SUFFIX,webofknowledge.com,☁️ Domestic
+ - DOMAIN-SUFFIX,wechat.com,☁️ Domestic
+ - DOMAIN-SUFFIX,weibo.com,☁️ Domestic
+ - DOMAIN-SUFFIX,weibocdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,weico.cc,☁️ Domestic
+ - DOMAIN-SUFFIX,weidian.com,☁️ Domestic
+ - DOMAIN-SUFFIX,westlaw.com,☁️ Domestic
+ - DOMAIN-SUFFIX,whatismyip.com,☁️ Domestic
+ - DOMAIN-SUFFIX,wiley.com,☁️ Domestic
+ - DOMAIN-SUFFIX,windows.com,☁️ Domestic
+ - DOMAIN-SUFFIX,windowsupdate.com,☁️ Domestic
+ - DOMAIN-SUFFIX,worldbank.org,☁️ Domestic
+ - DOMAIN-SUFFIX,worldscientific.com,☁️ Domestic
+ - DOMAIN-SUFFIX,xiachufang.com,☁️ Domestic
+ - DOMAIN-SUFFIX,xiami.com,☁️ Domestic
+ - DOMAIN-SUFFIX,xiami.net,☁️ Domestic
+ - DOMAIN-SUFFIX,xiaomi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ximalaya.com,☁️ Domestic
+ - DOMAIN-SUFFIX,xinhuanet.com,☁️ Domestic
+ - DOMAIN-SUFFIX,xmcdn.com,☁️ Domestic
+ - DOMAIN-SUFFIX,yangkeduo.com,☁️ Domestic
+ - DOMAIN-SUFFIX,ydstatic.com,☁️ Domestic
+ - DOMAIN-SUFFIX,youku.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zhangzishi.cc,☁️ Domestic
+ - DOMAIN-SUFFIX,zhihu.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zhimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zhuihd.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zimuzu.io,☁️ Domestic
+ - DOMAIN-SUFFIX,zimuzu.tv,☁️ Domestic
+ - DOMAIN-SUFFIX,zmz2019.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zmzapi.com,☁️ Domestic
+ - DOMAIN-SUFFIX,zmzapi.net,☁️ Domestic
+ - DOMAIN-SUFFIX,zmzfile.com,☁️ Domestic
+ - DOMAIN-SUFFIX,google.cn,☁️ Domestic
+ - DOMAIN-SUFFIX,manmanbuy.com,☁️ Domestic
+ - DOMAIN,www-cdn.icloud.com.akadns.net,☁️ Domestic
+ - DOMAIN-SUFFIX,aaplimg.com,☁️ Domestic
+ - DOMAIN-SUFFIX,apple-cloudkit.com,☁️ Domestic
+ - DOMAIN-SUFFIX,apple.co,☁️ Domestic
+ - DOMAIN-SUFFIX,apple.com,☁️ Domestic
+ - DOMAIN-SUFFIX,apple.com.cn,☁️ Domestic
+ - DOMAIN-SUFFIX,appstore.com,☁️ Domestic
+ - DOMAIN-SUFFIX,cdn-apple.com,☁️ Domestic
+ - DOMAIN-SUFFIX,crashlytics.com,☁️ Domestic
+ - DOMAIN-SUFFIX,icloud-content.com,☁️ Domestic
+ - DOMAIN-SUFFIX,icloud.com,☁️ Domestic
+ - DOMAIN-SUFFIX,icloud.com.cn,☁️ Domestic
+ - DOMAIN-SUFFIX,me.com,☁️ Domestic
+ - DOMAIN-SUFFIX,mzstatic.com,☁️ Domestic
+ - DOMAIN,injections.adguard.org,☁️ Domestic
+ - DOMAIN,local.adguard.org,☁️ Domestic
+ - DOMAIN-SUFFIX,local,☁️ Domestic
+ - IP-CIDR,127.0.0.0/8,☁️ Domestic
+ - IP-CIDR,172.16.0.0/12,☁️ Domestic
+ - IP-CIDR,192.168.0.0/16,☁️ Domestic
+ - IP-CIDR,10.0.0.0/8,☁️ Domestic
+ - IP-CIDR,17.0.0.0/8,☁️ Domestic
+ - IP-CIDR,100.64.0.0/10,☁️ Domestic
+ - IP-CIDR,224.0.0.0/4,☁️ Domestic
+ - IP-CIDR6,fe80::/10,☁️ Domestic
+ - DOMAIN-KEYWORD,admaster,🛡 Shield
+ - DOMAIN-SUFFIX,lbyczf.com,🛡 Shield
+ - DOMAIN-SUFFIX,faster.goodfrog.net,🛡 Shield
+ - DOMAIN-KEYWORD,adsage,🛡 Shield
+ - DOMAIN-SUFFIX,cylink.me,🛡 Shield
+ - DOMAIN-KEYWORD,admarvel,🛡 Shield
+ - DOMAIN-KEYWORD,admaster,🛡 Shield
+ - DOMAIN-KEYWORD,adsage,🛡 Shield
+ - DOMAIN-KEYWORD,adsmogo,🛡 Shield
+ - DOMAIN-KEYWORD,adsrvmedia,🛡 Shield
+ - DOMAIN-KEYWORD,adwords,🛡 Shield
+ - DOMAIN-KEYWORD,adservice,🛡 Shield
+ - DOMAIN-SUFFIX,appsflyer.com,🛡 Shield
+ - DOMAIN-KEYWORD,domob,🛡 Shield
+ - DOMAIN-SUFFIX,doubleclick.net,🛡 Shield
+ - DOMAIN-KEYWORD,duomeng,🛡 Shield
+ - DOMAIN-KEYWORD,dwtrack,🛡 Shield
+ - DOMAIN-KEYWORD,guanggao,🛡 Shield
+ - DOMAIN-KEYWORD,lianmeng,🛡 Shield
+ - DOMAIN-SUFFIX,mmstat.com,🛡 Shield
+ - DOMAIN-KEYWORD,mopub,🛡 Shield
+ - DOMAIN-KEYWORD,omgmta,🛡 Shield
+ - DOMAIN-KEYWORD,openx,🛡 Shield
+ - DOMAIN-KEYWORD,partnerad,🛡 Shield
+ - DOMAIN-KEYWORD,pingfore,🛡 Shield
+ - DOMAIN-KEYWORD,supersonicads,🛡 Shield
+ - DOMAIN-KEYWORD,uedas,🛡 Shield
+ - DOMAIN-KEYWORD,umeng,🛡 Shield
+ - DOMAIN-KEYWORD,usage,🛡 Shield
+ - DOMAIN-SUFFIX,vungle.com,🛡 Shield
+ - DOMAIN-KEYWORD,wlmonitor,🛡 Shield
+ - DOMAIN-KEYWORD,zjtoolbar,🛡 Shield
+ - GEOIP,CN,☁️ Domestic
+ - MATCH,❤️ YouTube梦歌
